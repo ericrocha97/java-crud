@@ -43,6 +43,7 @@ public class Suporte extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setTitle("Suporte");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/CrudClientes/logo.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

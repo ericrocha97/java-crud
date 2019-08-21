@@ -1,10 +1,8 @@
 package CrudClientes;
 
+import java.awt.Toolkit;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
+
 
 /**
  *
@@ -18,6 +16,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         setLocationRelativeTo(null); 
+        setIcon();
     }
 
     /**
@@ -121,26 +120,7 @@ public class Principal extends javax.swing.JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
     }//GEN-LAST:event_formWindowOpened
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        try {
-            
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
 
-        new Principal().setVisible(true);
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem imCliente;
@@ -150,4 +130,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JDesktopPane jdpPrincipal;
     // End of variables declaration//GEN-END:variables
+
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("logo.png")));
+    }
 }

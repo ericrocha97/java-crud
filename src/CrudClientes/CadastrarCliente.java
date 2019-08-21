@@ -142,6 +142,7 @@ public class CadastrarCliente extends javax.swing.JInternalFrame {
         setForeground(java.awt.Color.white);
         setTitle("Cadastrar Cliente");
         setToolTipText("");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/CrudClientes/logo.png"))); // NOI18N
 
         btSalvar.setText("Salvar");
         btSalvar.addActionListener(new java.awt.event.ActionListener() {

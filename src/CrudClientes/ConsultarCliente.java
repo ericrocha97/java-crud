@@ -1,5 +1,6 @@
 package CrudClientes;
 
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -22,6 +23,7 @@ public class ConsultarCliente extends javax.swing.JInternalFrame {
     public ConsultarCliente(JDesktopPane jdp) {
         initComponents();
         jdpPrincipal = jdp;
+
         //setLocationRelativeTo(null); 
     }
 
@@ -46,6 +48,7 @@ public class ConsultarCliente extends javax.swing.JInternalFrame {
         setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         setClosable(true);
         setTitle("Consultar Cliente");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/CrudClientes/logo.png"))); // NOI18N
 
         jLabel2.setText("Nome:");
 
@@ -229,4 +232,6 @@ public class ConsultarCliente extends javax.swing.JInternalFrame {
     private javax.swing.JTable jtCliente;
     private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
+
+    
 }
