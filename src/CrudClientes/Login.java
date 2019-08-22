@@ -134,7 +134,7 @@ public class Login extends javax.swing.JFrame {
     public void loginAction(){
        String login = jTLogin.getText();
        String senha = JtSenha.getText();
-       System.out.println(senha);
+
        
        if(!"admin".equals(login) && !"admin".equals(senha)){
            JOptionPane.showMessageDialog(this, "Usuário ou senha incorretos!", "Erro", JOptionPane.ERROR_MESSAGE);
