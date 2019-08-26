@@ -12,8 +12,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Calendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -214,6 +212,7 @@ public class CadastrarCliente extends javax.swing.JInternalFrame {
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(468, 265, -1, -1));
 
         jLabelObrigatorioNome.setForeground(new java.awt.Color(255, 0, 0));
+        jLabelObrigatorioNome.setToolTipText("");
         jPanel1.add(jLabelObrigatorioNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 33, 100, 20));
         jLabelObrigatorioNome.setVisible(false);
 
@@ -428,17 +427,17 @@ public class CadastrarCliente extends javax.swing.JInternalFrame {
         String valnome = this.txtNome.getText();
         if (valnome.length() > 0) {
             jLabelObrigatorioNome.setVisible(false);
-            if ((valnome.length() > 1) && (valnome.length() < 5)) {
-                jLabelObrigatorioNome.setVisible(true);
-                jLabelObrigatorioNome.setText("Muito curto!");
-            } else {
-                jLabelObrigatorioNome.setVisible(false);
+            if ((valnome.length() > 0) && (valnome.length() < 5)) {
+                //jLabelObrigatorioNome.setVisible(true);
+                //jLabelObrigatorioNome.setText("Muito curto!");
+                JOptionPane.showMessageDialog(this, "Campo (nome) no mínimo 5 carcteres.", "Atenção", JOptionPane.WARNING_MESSAGE);
             }
         } else {
+            JOptionPane.showMessageDialog(this, "Confira os campos Obrigatórios!!", "Atenção", JOptionPane.WARNING_MESSAGE);
             jLabelObrigatorioNome.setVisible(true);
             jLabelObrigatorioNome.setText("Obrigatorio!");
         }
-        if ( this.txtNome.getText().length()>5 ){
+        if ( valnome.length() >= 5 ){
             try{
                 if(idAlteracao == 0){ 
                     Connection con = DriverManager.getConnection("jdbc:mysql://mysql5014.site4now.net:3306/db_a464fd_realdev?zeroDateTimeBehavior=convertToNull","a464fd_realdev","nq1u2hi1");
@@ -466,6 +465,7 @@ public class CadastrarCliente extends javax.swing.JInternalFrame {
                     stmt.execute();
                     stmt.close();
                     con.close();
+                    JOptionPane.showMessageDialog(this, "Cliente Cadastrado com Sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
                 }else{
                     Connection con = DriverManager.getConnection("jdbc:mysql://mysql5014.site4now.net:3306/db_a464fd_realdev?zeroDateTimeBehavior=convertToNull","a464fd_realdev","nq1u2hi1");
 
@@ -492,15 +492,14 @@ public class CadastrarCliente extends javax.swing.JInternalFrame {
                     stmt.execute();
                     stmt.close();
                     con.close();
+                    JOptionPane.showMessageDialog(this, "Cliente Atualizado com Sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
                 }
-                JOptionPane.showMessageDialog(this, "Cliente Cadastrado com Sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                
                 this.dispose();
         }catch(SQLException e){
             JOptionPane.showMessageDialog(this, "Ocorreu um erro durante o cadastro.", "Erro", JOptionPane.ERROR_MESSAGE);
         } 
             
-        } else {
-            JOptionPane.showMessageDialog(this, "Confira os campos Obrigatórios!!", "Atenção", JOptionPane.WARNING_MESSAGE);
         }
 
             

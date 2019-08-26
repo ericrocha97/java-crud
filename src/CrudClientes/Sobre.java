@@ -50,7 +50,7 @@ public class Sobre extends javax.swing.JInternalFrame {
         jLabel1.setText("Sobre");
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Versão 1.2");
+        jLabel2.setText("Versão 1.3");
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Gerenciador de clientes");

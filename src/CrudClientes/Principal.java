@@ -1,12 +1,10 @@
 package CrudClientes;
 
-import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
 
 
 
